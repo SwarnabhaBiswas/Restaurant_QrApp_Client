@@ -7,7 +7,7 @@ export default function Landing() {
     <div>
       <h2>Welcome! Choose input method</h2>
       <button onClick={() => navigate('/manual')}>Enter Menu Manually</button>
-      <button onClick={() => navigate('/ocr')}>Upload Image (OCR)</button>
+      <button onClick={() => navigate('/upload-pdf')}>Upload PDF</button>
     </div>
   );
 }

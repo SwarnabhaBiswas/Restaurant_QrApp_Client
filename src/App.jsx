@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import ManualInput from './pages/ManualInput';
-import Ocr from './pages/Ocr';
+import UploadPDF from './pages/UploadPDF';
 import TemplateSelect from './pages/TemplateSelect';
 import Preview from './pages/Preview';
 
@@ -10,7 +10,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/manual" element={<ManualInput />} />
-      {/* <Route path="/ocr" element={<Ocr />} /> */}
+      <Route path="/upload-pdf" element={<UploadPDF />} />
       <Route path="/template" element={<TemplateSelect />} />
       <Route path="/preview" element={<Preview />} />
     </Routes>
