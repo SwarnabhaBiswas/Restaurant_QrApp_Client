@@ -10,7 +10,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
 
 function ViewPdf() {
   const { filename } = useParams();
-  const pdfUrl = `http://localhost:5000/uploads/${filename}`;
+  const pdfUrl = `${import.meta.env.VITE_API_URL}/uploads/${filename}`;
   const [numPages, setNumPages] = useState(null);
 
   const onLoadSuccess = ({ numPages }) => {
