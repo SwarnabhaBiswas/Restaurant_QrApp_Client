@@ -6,22 +6,23 @@ export default function Preview() {
   const [link, setLink] = useState('');
   const [qr, setQr] = useState('');
 
-  useEffect(() => {
-    const menu = JSON.parse(localStorage.getItem('menu'));
-    const template = localStorage.getItem('template');
+useEffect(() => {
+  const menu = JSON.parse(localStorage.getItem('menu'));
+  const template = localStorage.getItem('template');
+  const restaurantName = localStorage.getItem('restaurantName'); 
 
-    fetch(`http://localhost:5000/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ menu, template }),
-    })
-      .then(res => res.json())
-      .then(async ({ url }) => {
-        setLink(url);
-        const qrData = await QRCode.toDataURL(url);
-        setQr(qrData);
-      });
-  }, []);
+  fetch(`http://localhost:5000/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ menu, template, restaurantName }),
+  })
+    .then(res => res.json())
+    .then(async ({ url }) => {
+      setLink(url);
+      const qrData = await QRCode.toDataURL(url);
+      setQr(qrData);
+    });
+}, []);
 
   return (
     <div>
