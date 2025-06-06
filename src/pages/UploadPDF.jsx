@@ -11,7 +11,7 @@ const UploadPDF = () => {
     const formData = new FormData();
     formData.append("pdf", file);
 
-    const res = await fetch("http://localhost:5000/upload-pdf", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/upload-pdf`, {
       method: "POST",
       body: formData,
     });

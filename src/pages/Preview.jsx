@@ -11,17 +11,27 @@ useEffect(() => {
   const template = localStorage.getItem('template');
   const restaurantName = localStorage.getItem('restaurantName'); 
 
-  fetch(`http://localhost:5000/generate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ menu, template, restaurantName }),
+ fetch(`${import.meta.env.VITE_API_URL}/generate`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ menu, template, restaurantName }),
+})
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`Server returned ${res.status}`);
+    }
+    return res.json(); 
   })
-    .then(res => res.json())
-    .then(async ({ url }) => {
-      setLink(url);
-      const qrData = await QRCode.toDataURL(url);
-      setQr(qrData);
-    });
+  .then(async ({ url }) => {
+    setLink(url);
+    const qrData = await QRCode.toDataURL(url);
+    setQr(qrData);
+  })
+  .catch(err => {
+    console.error("Error in preview fetch:", err);
+  });
+
+
 }, []);
 
   return (
