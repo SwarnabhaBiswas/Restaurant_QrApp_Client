@@ -1,13 +1,45 @@
 import { useNavigate } from 'react-router-dom';
+import Nav from '../Components/Nav';
+import AboutSection from "../Components/AboutSection";
+import ContactForm from "../Components/ContactForm";
+import Footer from "../Components/Footer";
 
 export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Welcome! Choose input method</h2>
-      <button onClick={() => navigate('/manual')}>Enter Menu Manually</button>
-      <button onClick={() => navigate('/upload-pdf')}>Upload PDF</button>
+    <div className='w-screen h-screen'>
+      <Nav />
+      <main>
+        <section className="bg-blue-100 py-20 text-center px-6">
+          <h1 className="text-4xl font-bold text-blue-800 mb-4">Welcome to MenuQR</h1>
+          <p className="text-lg text-gray-700 mb-6">
+            Convert your menu to an elegant QR view in minutes — no login, no hassle.
+          </p>
+        </section>
+
+        <section className="text-center py-16 bg-white">
+          <h2 className="text-[30px] font-semibold mb-4 text-blue-700">Choose Your Option</h2>
+          <div className="space-x-4">
+            <button
+              onClick={() => navigate("/upload-pdf")}
+              className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
+            >
+              Upload Menu Image/PDF
+            </button>
+            <button
+              onClick={() => navigate("/manual")}
+              className="bg-gray-800 text-white px-6 py-3 rounded hover:bg-gray-900"
+            >
+              Enter Menu Manually
+            </button>
+          </div>
+        </section>
+
+        <AboutSection />
+        <ContactForm />
+      </main>
+          <Footer />
     </div>
   );
 }
