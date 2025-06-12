@@ -5,7 +5,7 @@ export default function TemplateSelect() {
 
   const pickTemplate = (name) => {
     localStorage.setItem('template', name);
-    navigate('/preview');
+    navigate('/manual');
   };
 
   return (
