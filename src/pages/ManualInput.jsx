@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import Navbar from "../Components/Nav";
 import { useNavigate } from "react-router-dom";
-import template1 from "../assets/template1.png";
-import template2 from "../assets/template2.png";
-import template3 from "../assets/template3.png";
+import template1 from "../assets/modern.png";
+import template2 from "../assets/minimal.png";
+import template3 from "../assets/classic.png";
 
 const templateImages = {
   modern: template1,
@@ -51,8 +51,10 @@ const ManualInput = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-between items-center gap-60">
-        <div style={{ padding: "2rem" }}>
+      <div className="flex">
+        <div 
+        className=""
+        style={{ padding: "2rem" }}>
           <h2>Enter Your Menu</h2>
 
           <form onSubmit={addItem}>
@@ -104,14 +106,14 @@ const ManualInput = () => {
             </ul>
           </div>
         </div>
-        <div className="template-preview">
+        <div className="template-preview flex-1 ml-20">
           {selectedTemplate ? (
             <>
               <h3>Selected Template Preview</h3>
               <img
                 src={templateImages[selectedTemplate]}
                 alt={`Template ${selectedTemplate}`}
-                style={{ width: "100%", borderRadius: "8px" }}
+                style={{ width: "70%", height: "100%", borderRadius: "8px" }}
               />
             </>
           ) : (
