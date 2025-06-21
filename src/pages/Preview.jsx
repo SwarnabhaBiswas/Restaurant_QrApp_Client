@@ -35,7 +35,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div>
+    <div className='flex-center'>
       <h2>Preview</h2>
       {qr && <img src={qr} alt="QR Code" />}
       <p>Menu Link: <a href={link} target="_blank">{link}</a></p>
