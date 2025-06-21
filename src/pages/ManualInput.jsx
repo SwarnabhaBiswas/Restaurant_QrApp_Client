@@ -51,7 +51,7 @@ const ManualInput = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-between items-center gap-60">
+      <div className="flex-justify-between items-center gap-60">
         <div style={{ padding: "2rem" }}>
           <h2>Enter Your Menu</h2>
 
