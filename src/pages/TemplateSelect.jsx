@@ -25,13 +25,9 @@ export default function TemplateSelect() {
         {['template1', 'template2', 'template3'].map(temp => (
           <div className=" mt-10 border border-gray-500 " key={temp}>
             <h3>{temp.toUpperCase()}</h3>
-<<<<<<< HEAD
-            <div  style={{ width: 200, height: 150, background: '#ddd' }}>
-              <img src={`./${temp}.png`} alt={temp} width="100%" />
-=======
+
             <div style={{ width: 200, height: 120, background: '#ddd' }}>
               <img src={templateImages[temp]} alt={temp} width="100% height=100%" />
->>>>>>> a02eaee815b1ec32e5c4bc68a3bd09ee0f1a3e44
             </div>
             <button className="mt-7 flex justify-center items-center" onClick={() => pickTemplate(temp)}>Choose</button>
           </div>
