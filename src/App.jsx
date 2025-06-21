@@ -8,7 +8,6 @@ import Preview from './pages/Preview';
 import Navbar from './Components/Nav';
 
 export default function App() {
-
   const [pdfUrl, setPdfUrl] = useState('');
 
   return (
