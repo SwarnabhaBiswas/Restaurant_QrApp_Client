@@ -120,68 +120,7 @@ const ManualInput = () => {
   }, {});
 
   return (
-<<<<<<< HEAD
-    <div>
-      <Navbar />
-<<<<<<< HEAD
-      <div className="flex-justify-between items-center gap-60">
-        <div style={{ padding: "2rem" }}>
-=======
-      <div className="flex">
-        <div 
-        className=""
-        style={{ padding: "2rem" }}>
->>>>>>> a02eaee815b1ec32e5c4bc68a3bd09ee0f1a3e44
-          <h2>Enter Your Menu</h2>
 
-          <form onSubmit={addItem}>
-            <input
-              type="text"
-              placeholder="Restaurant Name"
-              value={restaurantName}
-              onChange={(e) => setRestaurantName(e.target.value)}
-              style={{ marginBottom: "1rem", display: "block", width: "300px" }}
-            />
-            <input
-              type="text"
-              placeholder="Category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              placeholder="Dish"
-              value={dish}
-              ref={dishRef}
-              onChange={(e) => setDish(e.target.value)}
-              required
-            />
-            <input
-              type="number"
-              min="0"
-              step="0.01"
-              placeholder="Price"
-              value={price}
-              onChange={(e) => {
-                const val = e.target.value;
-                if (/^\d*\.?\d*$/.test(val)) setPrice(val);
-              }}
-              required
-            />
-            <button type="submit">Add Item</button>
-          </form>
-
-          <div style={{ marginTop: "1rem" }}>
-            <h4>Preview</h4>
-            <ul>
-              {menu.map((item, idx) => (
-                <li key={idx}>
-                  {item.category} - {item.dish} - ₹{item.price}
-                </li>
-              ))}
-            </ul>
-=======
     <div className="min-h-screen w-screen bg-gradient-to-br from-tertiary to-blue-50">
       <div className="bg-white shadow-sm border-b">
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -197,7 +136,6 @@ const ManualInput = () => {
                 {menu.length} items added
               </div>
             </div>
->>>>>>> ed4eab674ffa70bc98d79238582d42ae7796d001
           </div>
         </div>
       </div>
