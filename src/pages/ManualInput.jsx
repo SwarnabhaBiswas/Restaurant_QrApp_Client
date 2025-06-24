@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import Navbar from "../Components/Nav";
+import MinimalTemplate from '../assets/minimal.png';
+import ClassicTemplate from '../assets/classic.png';
+import ModernTemplate from '../assets/modern.png';
 
 const PlusIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,9 +43,9 @@ const EditIcon = () => (
 );
 
 const templateImages = {
-  modern: "",
-  minimal: "",
-  classic: "",
+  modern: ModernTemplate,
+  minimal: MinimalTemplate,
+  classic: ClassicTemplate,
 };
 
 const ManualInput = () => {
@@ -60,6 +63,7 @@ const ManualInput = () => {
   useEffect(() => {
     const template = localStorage.getItem("template") || "modern";
     setSelectedTemplate(template);
+    console.log(template);
   }, []);
 
   const addItem = (e) => {

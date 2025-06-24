@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import MinimalTemplate from '/src/Components/templates/MinimalTemplate';
-import ClassicTemplate from '/src/Components/templates/ClassicTemplate';
-import ModernTemplate from '/src/Components/templates/ModernTemplate';
+import MinimalTemplate from '/src/assets/minimal';
+import ClassicTemplate from '/src/assets/classic';
+import ModernTemplate from '/src/assets/modern';
 
 export default function MenuBuilder() {
   const location = useLocation();
