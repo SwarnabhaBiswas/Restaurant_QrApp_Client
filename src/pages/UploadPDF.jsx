@@ -22,10 +22,12 @@ const UploadPDF = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl mb-4">Upload your menu (PDF only)</h2>
-      <input type="file" accept="application/pdf" onChange={e => setFile(e.target.files[0])} />
-      <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onClick={handleUpload}>
+    <div className='h-screen w-screen bg-[url(./assets/paperpages.jpg)] flex items-center justify-center'>
+      <div className="bg-tertiary/30 backdrop-blur-md h-[50%] w-[60%] flex flex-col items-center justify-center border-secondary rounded">
+      <h2 className="text-[2rem] text-primary">Upload your menu (PDF only)</h2>
+      <input type="file" accept="application/pdf" onChange={e => setFile(e.target.files[0])} className="mt-4 p-2 border text-secondary border-secondary rounded"
+      />
+      <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded h-[15%] w-[20%]" onClick={handleUpload}>
         Upload PDF
       </button>
 
@@ -47,6 +49,7 @@ const UploadPDF = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

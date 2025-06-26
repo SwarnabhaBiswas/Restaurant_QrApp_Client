@@ -32,9 +32,9 @@ export default function Navbar() {
         </h1>
         </div>
         <div className="space-x-6">
-          <button onClick={() => navigate("/template")} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">Templates</button>
-          <button onClick={() => handleSectionClick('about')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">About</button>
-          <button onClick={() => handleSectionClick('contact')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">Contact</button>
+          <button onClick={() => navigate("/template")} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary focus:outline-none hover:bg-primary">Templates</button>
+          <button onClick={() => handleSectionClick('about')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary hover:bg-primary focus:outline-none">About</button>
+          <button onClick={() => handleSectionClick('contact')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary hover:bg-primary focus:outline-none">Contact</button>
         </div>
       </div>
     </nav>
