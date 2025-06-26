@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import Navbar from "../Components/Nav";
+import MinimalTemplate from '../assets/minimal.png';
+import ClassicTemplate from '../assets/classic.png';
+import ModernTemplate from '../assets/modern.png';
 
 const PlusIcon = () => (
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,9 +43,9 @@ const EditIcon = () => (
 );
 
 const templateImages = {
-  modern: "",
-  minimal: "",
-  classic: "",
+  modern: ModernTemplate,
+  minimal: MinimalTemplate,
+  classic: ClassicTemplate,
 };
 
 const ManualInput = () => {
@@ -60,6 +63,7 @@ const ManualInput = () => {
   useEffect(() => {
     const template = localStorage.getItem("template") || "modern";
     setSelectedTemplate(template);
+    console.log(template);
   }, []);
 
   const addItem = (e) => {
@@ -120,6 +124,7 @@ const ManualInput = () => {
   }, {});
 
   return (
+
     <div className="min-h-screen w-screen bg-gradient-to-br from-tertiary to-blue-50">
       <div className="bg-white shadow-sm border-b">
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -148,7 +153,7 @@ const ManualInput = () => {
                 <h2 className="text-xl font-semibold text-secondary mb-4">Restaurant Information</h2>
                 <input
                   type="text"
-                  placeholder="Enter restaurant name"
+                  placeholder="restaurant name / leave if you want the topic to be (Menu)"
                   value={restaurantName}
                   onChange={(e) => setRestaurantName(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-lg"
