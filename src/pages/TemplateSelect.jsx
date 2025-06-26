@@ -27,7 +27,7 @@ export default function TemplateSelect() {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mt-10 px-4">
         {templates.map(({ key, label, image }) => (
-          <div key={key} className="border border-gray-300 rounded-lg p-4 text-center shadow">
+          <div key={key} className="border border-gray-300 rounded-lg p-4 text-center shadow bg-orange-50">
             
             <div className="w-full aspect-[4/3] rounded overflow-hidden">
             <h3 className="text-xl text-black font-semibold mb-3">{label}</h3>

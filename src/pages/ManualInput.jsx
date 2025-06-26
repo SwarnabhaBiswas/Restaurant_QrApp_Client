@@ -153,7 +153,7 @@ const ManualInput = () => {
                 <h2 className="text-xl font-semibold text-secondary mb-4">Restaurant Information</h2>
                 <input
                   type="text"
-                  placeholder="Enter restaurant name"
+                  placeholder="restaurant name / leave if you want the topic to be (Menu)"
                   value={restaurantName}
                   onChange={(e) => setRestaurantName(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-lg"
