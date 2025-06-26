@@ -1,10 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+import { useNavigate,useLocation } from 'react-router-dom';
 import AboutSection from "../Components/AboutSection";
 import ContactForm from "../Components/ContactForm";
 import Footer from "../Components/Footer";
 
 export default function Landing() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <div className='w-screen h-screen'>
@@ -34,8 +47,10 @@ export default function Landing() {
           </div>
         </section>
 
+        <section id="about">
         <AboutSection />
-        <ContactForm />
+      </section>
+        <ContactForm id="contact"/>
       </main>
           <Footer />
     </div>
