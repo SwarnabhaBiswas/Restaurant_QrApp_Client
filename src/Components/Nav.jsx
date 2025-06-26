@@ -1,8 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSectionClick = (sectionId) => {
+    if (location.pathname === '/') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollTo: sectionId } });
+    }
+  };
 
   return (
     <div className="w-screen top-0 absolute">
@@ -23,9 +32,9 @@ export default function Navbar() {
         </h1>
         </div>
         <div className="space-x-6">
-          <button onClick={() => navigate("/template")} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">Templates</button>
-          <button onClick={() => document.getElementById("about").scrollIntoView({ behavior: 'smooth' })} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">About</button>
-          <button onClick={() => document.getElementById("contact").scrollIntoView({ behavior: 'smooth' })} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-blue-600 focus:outline-none">Contact</button>
+          <button onClick={() => navigate("/template")} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary focus:outline-none hover:bg-primary">Templates</button>
+          <button onClick={() => handleSectionClick('about')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary hover:bg-primary focus:outline-none">About</button>
+          <button onClick={() => handleSectionClick('contact')} className="h-15 w-40 bg-tertiary text-gray-700 hover:text-tertiary hover:bg-primary focus:outline-none">Contact</button>
         </div>
       </div>
     </nav>

@@ -66,6 +66,14 @@ const ManualInput = () => {
     console.log(template);
   }, []);
 
+  useEffect(() => {
+  const savedMenu = JSON.parse(localStorage.getItem("menu"));
+  const savedName = localStorage.getItem("restaurantName");
+
+  if (savedMenu) setMenu(savedMenu);
+  if (savedName) setRestaurantName(savedName);
+}, []);
+
   const addItem = (e) => {
     e.preventDefault();
     if (category && dish && price && !isNaN(price)) {
@@ -77,7 +85,6 @@ const ManualInput = () => {
       } else {
         setMenu([...menu, { category, dish, price: parseFloat(price) }]);
       }
-      setCategory("");
       setDish("");
       setPrice("");
 

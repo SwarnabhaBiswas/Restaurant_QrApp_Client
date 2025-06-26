@@ -1,15 +1,28 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+import { useNavigate,useLocation } from 'react-router-dom';
 import AboutSection from "../Components/AboutSection";
 import ContactForm from "../Components/ContactForm";
 import Footer from "../Components/Footer";
 
 export default function Landing() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <div className='w-screen h-screen'>
       <main>
-        <section className="bg-secondary mt-40 py-20 text-center px-6">
+        <section className="bg-[secondary] mt-40 py-20 text-center px-6">
           <h1 className="text-4xxl font-bold text-primary mb-4 tracking-[5px]">Welcome to MenuQR</h1>
           <p className="mt-10 tracking-[3px] text-lg text-tertiary mb-6">
             Convert your menu to an elegant QR view in minutes — no login, no hassle.
@@ -34,8 +47,10 @@ export default function Landing() {
           </div>
         </section>
 
+        <section id="about">
         <AboutSection />
-        <ContactForm />
+      </section>
+        <ContactForm id="contact"/>
       </main>
           <Footer />
     </div>
