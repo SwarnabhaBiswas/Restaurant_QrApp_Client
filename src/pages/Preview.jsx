@@ -12,6 +12,11 @@ useEffect(() => {
   const menu = JSON.parse(localStorage.getItem('menu'));
   const template = localStorage.getItem('template');
   const restaurantName = localStorage.getItem('restaurantName'); 
+  console.log("Sending to /generate:", {
+  menu: JSON.parse(localStorage.getItem("menu")),
+  template: localStorage.getItem("template"),
+  restaurantName: localStorage.getItem("restaurantName")
+});
 
  fetch(`${import.meta.env.VITE_API_URL}/generate`, {
   method: 'POST',
