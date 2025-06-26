@@ -32,11 +32,13 @@ export default function TemplateSelect() {
             <div className="w-full aspect-[4/3] rounded overflow-hidden">
             <h3 className="text-xl text-black font-semibold mb-3">{label}</h3>
 
-              <img
-                src={image}
-                alt={label}
-                className="w-full h-full object-contain"
-              />
+              <div className="w-full aspect-[5/4] rounded overflow-hidden">
+                    <img
+                      src={image}
+                      alt={`Preview of ${label} template`}
+                      className="w-full h-full object-contain rounded"
+                    />
+                  </div>
             </div>
 
             <button
