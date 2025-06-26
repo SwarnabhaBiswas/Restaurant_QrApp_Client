@@ -117,10 +117,12 @@ const ManualInput = () => {
   };
 
   const handleSubmit = () => {
-    localStorage.setItem("menu", JSON.stringify(menu));
-    localStorage.setItem("restaurantName", restaurantName);
-    navigate("/preview");
-  };
+  const finalRestaurantName = restaurantName.trim() || "Menu";
+
+  localStorage.setItem("menu", JSON.stringify(menu));
+  localStorage.setItem("restaurantName", finalRestaurantName);
+  navigate("/preview");
+};;
 
   const groupedMenu = menu.reduce((acc, item) => {
     if (!acc[item.category]) {
