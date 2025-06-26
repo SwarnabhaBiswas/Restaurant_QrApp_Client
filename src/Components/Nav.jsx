@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-screen top-0 absolute">
+    <div className="w-screen top-0 absolute sticky z-50">
     <nav className="bg-tertiary shadow-md p-1.5 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4 cursor-pointer" onClick={() => navigate("/")}>

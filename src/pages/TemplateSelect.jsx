@@ -18,7 +18,7 @@ export default function TemplateSelect() {
   };
 
   return (
-    <div className="w-screen h-[640px] mt-24 bg-white font-sans">
+    <div className="w-screen h-[87vh] bg-white font-sans">
       <h2 className="text-black font-bold text-4xl px-4 pt-6 pb-4 text-center">
         Choose a Look That <br /> Fits Your Restaurant
       </h2>

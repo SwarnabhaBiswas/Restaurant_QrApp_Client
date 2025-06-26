@@ -43,7 +43,7 @@ useEffect(() => {
 
   return (
     <div
-      className="h-screen w-screen  flex items-center justify-center bg-[url('./assets/food2.jpg')] bg-cover bg-center overflow-x-hidden overflow-y-hidden"
+      className="h-[87vh] w-screen  flex items-center justify-center bg-[url('./assets/food2.jpg')] bg-cover bg-center overflow-x-hidden overflow-y-hidden"
     >
       <div className="bg-tertiary/80 mt-[3%] backdrop-blur-md rounded-xl shadow-lg p-8 max-w-md w-full text-center">
         <div className="flex justify-center mb-4">

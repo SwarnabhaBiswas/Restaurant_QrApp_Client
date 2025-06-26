@@ -307,7 +307,7 @@ const ManualInput = () => {
                     <img
                       src={templateImages[selectedTemplate]}
                       alt={`Template ${selectedTemplate}`}
-                      className="w-full h-48 object-cover rounded-lg border border-gray-200"
+                      className="w-full h-48 object-cover rounded-lg border border-gray-200 "
                     />
                     <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm capitalize">
                       {selectedTemplate}

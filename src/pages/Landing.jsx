@@ -22,7 +22,7 @@ export default function Landing() {
   return (
     <div className='w-screen h-screen'>
       <main>
-        <section className="bg-[secondary] mt-40 py-20 text-center px-6">
+        <section className="bg-[secondary] mt-20 py-20 text-center px-6">
           <h1 className="text-4xxl font-bold text-primary mb-4 tracking-[5px]">Welcome to MenuQR</h1>
           <p className="mt-10 tracking-[3px] text-lg text-tertiary mb-6">
             Convert your menu to an elegant QR view in minutes — no login, no hassle.
